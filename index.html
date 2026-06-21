@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Muhannad AlHaj Issa — Executive IT &amp; ERP Leadership</title>
 <meta name="description" content="Official site of Muhannad AlHaj Issa. Executive IT & ERP leadership, digital transformation, and enterprise technology governance in Riyadh." />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2286985672839395" crossorigin="anonymous"></script>
 
 <!-- ============================================================
      FONTS  —  Display: Bodoni Moda (editorial serif) · Body: Hanken Grotesk
@@ -214,8 +215,9 @@ section{ padding:clamp(72px, 10vw, 138px) 0; }
 .posts{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; }
 .post{ background:var(--surface); border:1px solid var(--hairline); border-radius:var(--radius); overflow:hidden; transition:transform .25s ease, box-shadow .25s ease; }
 .post:hover{ transform:translateY(-4px); box-shadow:0 26px 46px -30px rgba(32,36,43,.45); }
-.post .thumb{ aspect-ratio:16/10; background:linear-gradient(135deg,var(--ink),var(--slate)); position:relative; }
-.post .thumb::after{ content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(176,138,79,.18) 0 1px, transparent 1px 14px); }
+.post .thumb{ aspect-ratio:16/10; background:linear-gradient(135deg,var(--ink),var(--slate)); position:relative; overflow:hidden; }
+.post .thumb::after{ content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(176,138,79,.18) 0 1px, transparent 1px 14px); pointer-events:none; }
+.post .thumb img{width:100%;height:100%;object-fit:contain;}
 .post .body{ padding:1.6rem 1.6rem 1.8rem; }
 .post .meta{ font-size:.72rem; font-weight:600; letter-spacing:.14em; color:var(--brass-dk); text-transform:uppercase; }
 .post h3{ font-size:1.18rem; margin:.7rem 0; }
@@ -512,8 +514,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
            gadget pointing to /feeds/posts/default?alt=json -->
       <div class="posts">
         <article class="post reveal">
-          <div class="thumb" style="background:linear-gradient(135deg,var(--ink),var(--slate)); overflow:hidden;">
-            <img src="erp-failure-diagram.svg" alt="Six stages from kickoff to a stalled go-live" style="width:100%;height:100%;object-fit:cover;opacity:.6;" />
+          <div class="thumb" style="background:linear-gradient(135deg,var(--ink),var(--slate));">
+            <img src="erp-failure-diagram.svg" alt="Six stages from kickoff to a stalled go-live" />
           </div>
           <div class="body">
             <span class="meta">ERP</span>
@@ -523,8 +525,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           </div>
         </article>
         <article class="post reveal">
-          <div class="thumb" style="background:linear-gradient(135deg,#1a5c52,#2a7a6e); overflow:hidden;">
-            <img src="pdpl-diagram.svg" alt="Six layers of a PDPL program" style="width:100%;height:100%;object-fit:cover;opacity:.6;" />
+          <div class="thumb" style="background:linear-gradient(135deg,#1a5c52,#2a7a6e);">
+            <img src="pdpl-diagram.svg" alt="Six layers of a PDPL program" />
           </div>
           <div class="body">
             <span class="meta">Governance</span>
