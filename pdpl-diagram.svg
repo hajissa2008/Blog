@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="400" height="400" fill="#f5f6f5" rx="0"/>
+
+  <!-- Shield shape -->
+  <path d="M200 30 L330 90 L330 210 Q330 310 200 370 Q70 310 70 210 L70 90 Z" fill="#1a5c52" opacity=".12"/>
+  <path d="M200 50 L310 100 L310 210 Q310 300 200 355 Q90 300 90 210 L90 100 Z" fill="none" stroke="#2a7a6e" stroke-width="3" opacity=".6"/>
+
+  <!-- Check mark inside shield -->
+  <path d="M155 200 L190 235 L250 175" fill="none" stroke="#2a7a6e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+
+  <!-- PDPL text -->
+  <text x="200" y="280" text-anchor="middle" font-size="52" font-weight="700" fill="#1a1e24" letter-spacing="6">PDPL</text>
+  <text x="200" y="305" text-anchor="middle" font-size="11" fill="#5b646a" letter-spacing="2.5">DATA PROTECTION</text>
+  <text x="200" y="322" text-anchor="middle" font-size="10" fill="#8a929b" letter-spacing="1.8">COMPLIANCE PROGRAM</text>
+
+  <!-- Small decorative line -->
+  <line x1="120" y1="328" x2="280" y2="328" stroke="#d0d5d2" stroke-width="1"/>
+</svg>
