@@ -1,90 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 820" font-family="'Space Grotesk','Segoe UI',system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 780" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
   <defs>
-    <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fcfcfc"/>
+      <stop offset="100%" stop-color="#f2f3f2"/>
+    </radialGradient>
+    <linearGradient id="scopeGrad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#4d6975"/>
-      <stop offset="22%" stop-color="#4d6975"/>
-      <stop offset="45%" stop-color="#b6720f"/>
-      <stop offset="62%" stop-color="#b6720f"/>
-      <stop offset="82%" stop-color="#a8362d"/>
-      <stop offset="100%" stop-color="#a8362d"/>
+      <stop offset="100%" stop-color="#3a525c"/>
     </linearGradient>
+    <linearGradient id="sponsorGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b6720f"/>
+      <stop offset="100%" stop-color="#8f5c08"/>
+    </linearGradient>
+    <linearGradient id="changeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a8362d"/>
+      <stop offset="100%" stop-color="#8a2820"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#14171b" flood-opacity=".06"/>
+    </filter>
+    <filter id="shadowDeep">
+      <feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#14171b" flood-opacity=".14"/>
+    </filter>
   </defs>
 
-  <rect width="760" height="820" fill="#f5f6f5" rx="0"/>
+  <rect width="860" height="780" fill="url(#bgGrad)" rx="0"/>
+  <rect x="0" y="0" width="860" height="4" fill="#a8362d" opacity=".7"/>
 
   <!-- Header -->
-  <text x="40" y="52" font-size="11.5" font-family="'Space Mono',monospace" fill="#8a9197" letter-spacing="2">HOW THE FAILURE UNFOLDS</text>
-  <text x="40" y="82" font-size="22" font-weight="600" fill="#14171b" letter-spacing="-0.3">Six steps from kickoff to a stalled go-live</text>
+  <text x="430" y="48" text-anchor="middle" font-size="11" fill="#8a929b" letter-spacing="2.5" font-weight="600">THE ANATOMY OF</text>
+  <text x="430" y="76" text-anchor="middle" font-size="26" font-weight="700" fill="#1a1e24" letter-spacing="-0.4">Why ERP projects fail before go-live</text>
+  <text x="430" y="102" text-anchor="middle" font-size="14" fill="#6b757c">Three root causes that compound silently — until the system goes live</text>
+  <line x1="370" y1="118" x2="490" y2="118" stroke="#d0d5d2" stroke-width="1"/>
 
-  <!-- Vertical line -->
-  <rect x="61" y="100" width="2" height="660" rx="1" fill="url(#lineGrad)"/>
-
-  <!-- Step 1 -->
-  <g transform="translate(40,100)">
-    <circle cx="22" cy="22" r="20" fill="#fff" stroke="#4d6975" stroke-width="2"/>
-    <text x="22" y="27" text-anchor="middle" font-size="15" font-weight="700" font-family="'Space Mono',monospace" fill="#4d6975">1</text>
-    <rect x="64" y="0" width="636" height="90" rx="14" fill="#fff" stroke="rgba(20,23,27,.12)" stroke-width="1"/>
-    <circle cx="80" cy="22" r="4" fill="#4d6975"/>
-    <text x="91" y="26" font-size="11" font-weight="700" font-family="'Space Mono',monospace" fill="#4d6975" letter-spacing="1.3">SCOPE</text>
-    <text x="80" y="48" font-size="18" font-weight="600" fill="#14171b">The goal is set too vague</text>
-    <text x="80" y="70" font-size="16.5" fill="#5b646a">"Modernize operations." No line drawn between what changes and what doesn't.</text>
+  <!-- ==================== SCOPE ==================== -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="150" width="350" height="215" rx="10" fill="#fff" stroke="#e6e9e7" stroke-width="1"/>
+    <rect x="60" y="150" width="350" height="36" rx="10" fill="url(#scopeGrad)"/>
+    <rect x="60" y="186" width="350" height="1" fill="rgba(0,0,0,.08)"/>
+    <circle cx="84" cy="168" r="4" fill="#fff" opacity=".35"/>
+    <text x="96" y="172" font-size="11" font-weight="700" fill="#fff" letter-spacing="1.8">SCOPE</text>
+    <text x="80" y="214" font-size="10.5" font-weight="600" fill="#4d6975" letter-spacing=".8">WEAK BOUNDARIES</text>
+    <circle cx="80" cy="236" r="3" fill="#4d6975" opacity=".7"/>
+    <text x="92" y="240" font-size="13.5" font-weight="600" fill="#1a1e24">Vague goals</text>
+    <text x="92" y="260" font-size="12" fill="#5b646a">"Modernize operations" — no line drawn</text>
+    <text x="92" y="278" font-size="12" fill="#5b646a">between what changes and what stays.</text>
+    <circle cx="80" cy="302" r="3" fill="#4d6975" opacity=".7"/>
+    <text x="92" y="306" font-size="13.5" font-weight="600" fill="#1a1e24">Wishlist overload</text>
+    <text x="92" y="326" font-size="12" fill="#5b646a">Every team loads its wishlist — there's</text>
+    <text x="92" y="344" font-size="12" fill="#5b646a">no principled basis to say no.</text>
   </g>
 
-  <!-- Step 2 -->
-  <g transform="translate(40,220)">
-    <circle cx="22" cy="22" r="20" fill="#fff" stroke="#4d6975" stroke-width="2"/>
-    <text x="22" y="27" text-anchor="middle" font-size="15" font-weight="700" font-family="'Space Mono',monospace" fill="#4d6975">2</text>
-    <rect x="64" y="0" width="636" height="90" rx="14" fill="#fff" stroke="rgba(20,23,27,.12)" stroke-width="1"/>
-    <circle cx="80" cy="22" r="4" fill="#4d6975"/>
-    <text x="91" y="26" font-size="11" font-weight="700" font-family="'Space Mono',monospace" fill="#4d6975" letter-spacing="1.3">SCOPE</text>
-    <text x="80" y="48" font-size="18" font-weight="600" fill="#14171b">Every team loads its wishlist</text>
-    <text x="80" y="70" font-size="16.5" fill="#5b646a">With no clear boundary, there's no principled basis to say no to anything.</text>
+  <!-- ==================== SPONSORSHIP ==================== -->
+  <g filter="url(#shadow)">
+    <rect x="450" y="150" width="350" height="215" rx="10" fill="#fff" stroke="#e6e9e7" stroke-width="1"/>
+    <rect x="450" y="150" width="350" height="36" rx="10" fill="url(#sponsorGrad)"/>
+    <rect x="450" y="186" width="350" height="1" fill="rgba(0,0,0,.08)"/>
+    <circle cx="474" cy="168" r="4" fill="#fff" opacity=".35"/>
+    <text x="486" y="172" font-size="11" font-weight="700" fill="#fff" letter-spacing="1.8">SPONSORSHIP</text>
+    <text x="470" y="214" font-size="10.5" font-weight="600" fill="#b6720f" letter-spacing=".8">MISSING DECISIONS</text>
+    <circle cx="470" cy="236" r="3" fill="#b6720f" opacity=".7"/>
+    <text x="482" y="240" font-size="13.5" font-weight="600" fill="#1a1e24">Decision vacuum</text>
+    <text x="482" y="260" font-size="12" fill="#5b646a">The sponsor facilitates workshops</text>
+    <text x="482" y="278" font-size="12" fill="#5b646a">instead of making the hard calls.</text>
+    <circle cx="470" cy="302" r="3" fill="#b6720f" opacity=".7"/>
+    <text x="482" y="306" font-size="13.5" font-weight="600" fill="#1a1e24">Conflicts fossilize</text>
+    <text x="482" y="326" font-size="12" fill="#5b646a">Unresolved cross-team disputes get</text>
+    <text x="482" y="344" font-size="12" fill="#5b646a">coded into contradictory configuration.</text>
   </g>
 
-  <!-- Step 3 -->
-  <g transform="translate(40,340)">
-    <circle cx="22" cy="22" r="20" fill="#fff" stroke="#b6720f" stroke-width="2"/>
-    <text x="22" y="27" text-anchor="middle" font-size="15" font-weight="700" font-family="'Space Mono',monospace" fill="#b6720f">3</text>
-    <rect x="64" y="0" width="636" height="90" rx="14" fill="#fff" stroke="rgba(20,23,27,.12)" stroke-width="1"/>
-    <circle cx="80" cy="22" r="4" fill="#b6720f"/>
-    <text x="91" y="26" font-size="11" font-weight="700" font-family="'Space Mono',monospace" fill="#b6720f" letter-spacing="1.3">SPONSORSHIP</text>
-    <text x="80" y="48" font-size="18" font-weight="600" fill="#14171b">The sponsor delegates the hard calls</text>
-    <text x="80" y="70" font-size="16.5" fill="#5b646a">A name on the org chart facilitates workshops instead of deciding.</text>
+  <!-- ==================== CONNECTIONS ==================== -->
+  <line x1="235" y1="365" x2="235" y2="395" stroke="#4d6975" stroke-width="1.5" opacity=".35"/>
+  <polygon points="235,402 230,392 240,392" fill="#4d6975" opacity=".5"/>
+  <line x1="625" y1="365" x2="625" y2="395" stroke="#b6720f" stroke-width="1.5" opacity=".35"/>
+  <polygon points="625,402 620,392 630,392" fill="#b6720f" opacity=".5"/>
+  <line x1="410" y1="222" x2="450" y2="222" stroke="#d0d5d2" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- ==================== CENTRAL HUB ==================== -->
+  <g filter="url(#shadowDeep)">
+    <circle cx="430" cy="450" r="50" fill="#a8362d"/>
+    <circle cx="430" cy="450" r="50" fill="none" stroke="#fff" stroke-width="1.5" opacity=".12"/>
+    <circle cx="430" cy="450" r="44" fill="none" stroke="#fff" stroke-width=".5" opacity=".08"/>
+    <text x="430" y="441" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1.8">ERP</text>
+    <text x="430" y="459" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1.8">FAILURE</text>
+    <text x="430" y="477" text-anchor="middle" font-size="9.5" fill="rgba(255,255,255,.55)" letter-spacing="1">INEVITABLE</text>
   </g>
 
-  <!-- Step 4 -->
-  <g transform="translate(40,460)">
-    <circle cx="22" cy="22" r="20" fill="#fff" stroke="#b6720f" stroke-width="2"/>
-    <text x="22" y="27" text-anchor="middle" font-size="15" font-weight="700" font-family="'Space Mono',monospace" fill="#b6720f">4</text>
-    <rect x="64" y="0" width="636" height="90" rx="14" fill="#fff" stroke="rgba(20,23,27,.12)" stroke-width="1"/>
-    <circle cx="80" cy="22" r="4" fill="#b6720f"/>
-    <text x="91" y="26" font-size="11" font-weight="700" font-family="'Space Mono',monospace" fill="#b6720f" letter-spacing="1.3">SPONSORSHIP</text>
-    <text x="80" y="48" font-size="18" font-weight="600" fill="#14171b">Conflicts get baked into the build</text>
-    <text x="80" y="70" font-size="16.5" fill="#5b646a">Unresolved cross-team disputes fossilize into contradictory configuration.</text>
+  <!-- Center → Change Readiness -->
+  <line x1="430" y1="500" x2="430" y2="520" stroke="#a8362d" stroke-width="1.5" opacity=".35"/>
+  <polygon points="430,527 425,517 435,517" fill="#a8362d" opacity=".5"/>
+
+  <!-- ==================== CHANGE READINESS ==================== -->
+  <g filter="url(#shadow)">
+    <rect x="140" y="535" width="580" height="160" rx="10" fill="#fff" stroke="#e6e9e7" stroke-width="1"/>
+    <rect x="140" y="535" width="580" height="36" rx="10" fill="url(#changeGrad)"/>
+    <rect x="140" y="571" width="580" height="1" fill="rgba(0,0,0,.08)"/>
+    <circle cx="164" cy="553" r="4" fill="#fff" opacity=".35"/>
+    <text x="176" y="557" font-size="11" font-weight="700" fill="#fff" letter-spacing="1.8">CHANGE READINESS</text>
+    <text x="160" y="596" font-size="10.5" font-weight="600" fill="#a8362d" letter-spacing=".8">LAST-MINUTE ADAPTATION</text>
+    <circle cx="160" cy="618" r="3" fill="#a8362d" opacity=".7"/>
+    <text x="172" y="622" font-size="13.5" font-weight="600" fill="#1a1e24">Training is an afterthought</text>
+    <text x="172" y="642" font-size="12" fill="#5b646a">Users never truly adapt. Old spreadsheets and shadow processes</text>
+    <text x="172" y="660" font-size="12" fill="#5b646a">quietly survive the cutover.</text>
+    <circle cx="346" cy="618" r="3" fill="#a8362d" opacity=".7"/>
+    <text x="358" y="622" font-size="13.5" font-weight="600" fill="#1a1e24">Failure surfaces at go-live</text>
+    <text x="358" y="642" font-size="12" fill="#5b646a">Bad data loads, broken integrations, and</text>
+    <text x="358" y="660" font-size="12" fill="#5b646a">a month-end close that takes weeks.</text>
   </g>
 
-  <!-- Step 5 -->
-  <g transform="translate(40,580)">
-    <circle cx="22" cy="22" r="20" fill="#a8362d" stroke="#a8362d" stroke-width="2"/>
-    <text x="22" y="27" text-anchor="middle" font-size="15" font-weight="700" font-family="'Space Mono',monospace" fill="#fff">5</text>
-    <rect x="64" y="0" width="636" height="90" rx="14" fill="#fff" stroke="#a8362d" stroke-width="1.5"/>
-    <circle cx="80" cy="22" r="4" fill="#a8362d"/>
-    <text x="91" y="26" font-size="11" font-weight="700" font-family="'Space Mono',monospace" fill="#a8362d" letter-spacing="1.3">CHANGE READINESS</text>
-    <text x="80" y="48" font-size="18" font-weight="600" fill="#14171b">Change is left to last-minute training</text>
-    <text x="80" y="70" font-size="16.5" fill="#5b646a">People never adapt, so the old spreadsheets and workarounds quietly survive.</text>
-  </g>
-
-  <!-- Step 6 -->
-  <g transform="translate(40,700)">
-    <circle cx="22" cy="22" r="20" fill="#a8362d" stroke="#a8362d" stroke-width="2"/>
-    <text x="22" y="27" text-anchor="middle" font-size="15" font-weight="700" font-family="'Space Mono',monospace" fill="#fff">6</text>
-    <rect x="64" y="0" width="636" height="90" rx="14" fill="#fff" stroke="#a8362d" stroke-width="1.5"/>
-    <circle cx="80" cy="22" r="4" fill="#a8362d"/>
-    <text x="91" y="26" font-size="11" font-weight="700" font-family="'Space Mono',monospace" fill="#a8362d" letter-spacing="1.3">GO-LIVE</text>
-    <text x="80" y="48" font-size="18" font-weight="600" fill="#14171b">The failure finally surfaces</text>
-    <text x="80" y="70" font-size="16.5" fill="#5b646a">Bad data loads, a broken integration, a month-end that takes three weeks.</text>
-  </g>
-
-  <!-- Caption -->
-  <text x="104" y="790" font-size="12" font-family="'Space Mono',monospace" fill="#8a9197">Steps 1–4 are decided in the first weeks. The cost stays invisible until step 6 — which is why go-live gets the blame for a failure set in motion at kickoff.</text>
+  <!-- ==================== BOTTOM INSIGHT ==================== -->
+  <rect x="170" y="715" width="520" height="44" rx="6" fill="#1a1e24" opacity=".04"/>
+  <text x="430" y="733" text-anchor="middle" font-size="12.5" fill="#5b646a">All three causes are set in the project's first weeks — long before go-live gets the blame.</text>
+  <text x="430" y="751" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1e24">The cost stays invisible until it's too late.</text>
 </svg>
