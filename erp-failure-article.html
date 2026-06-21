@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why ERP projects fail before go-live</title>
+<meta name="description" content="The real risks in an ERP implementation show up long before the system does — in scope, sponsorship, and change readiness.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14171b;
+    --paper:#f5f6f5;
+    --surface:#ffffff;
+    --muted:#5b646a;
+    --faint:#8a9197;
+    --hair:rgba(20,23,27,.12);
+    --hair-strong:rgba(20,23,27,.22);
+    --steel:#4d6975;
+    --steel-soft:#e7edee;
+    --amber:#b6720f;
+    --amber-soft:#f6ecdc;
+    --crimson:#a8362d;
+    --crimson-soft:#f6e3e0;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"Newsreader",Georgia,"Times New Roman",serif;
+    --mono:"Space Mono",ui-monospace,Menlo,monospace;
+    --measure:680px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ink:#e9ebe7;
+      --paper:#15191c;
+      --surface:#1d2226;
+      --muted:#a3aab0;
+      --faint:#6f777d;
+      --hair:rgba(233,235,231,.14);
+      --hair-strong:rgba(233,235,231,.26);
+      --steel:#8fb0bd;
+      --steel-soft:#243036;
+      --amber:#e0a449;
+      --amber-soft:#34291a;
+      --crimson:#e07a70;
+      --crimson-soft:#34211f;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:20px;
+    line-height:1.68;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--measure);margin:0 auto;padding:0 24px}
+
+  header.masthead{padding:88px 0 40px}
+  .eyebrow{
+    font-family:var(--mono);font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--amber);margin:0 0 28px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--amber);display:inline-block}
+  h1{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(34px,6.4vw,58px);line-height:1.04;
+    letter-spacing:-.02em;margin:0 0 26px;
+  }
+  .standfirst{
+    font-family:var(--body);font-style:italic;font-size:clamp(20px,2.6vw,25px);
+    line-height:1.5;color:var(--muted);max-width:30em;margin:0 0 34px;
+  }
+  .byline{
+    font-family:var(--mono);font-size:12.5px;color:var(--faint);
+    letter-spacing:.04em;border-top:1px solid var(--hair);padding-top:18px;
+    display:flex;flex-wrap:wrap;gap:8px 18px;
+  }
+  .byline span{color:var(--muted)}
+
+  figure.diagram{margin:8px auto 56px;max-width:760px;padding:0 24px}
+  .fig-head{margin:0 0 26px}
+  .fig-kicker{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--faint);margin:0 0 8px;
+  }
+  .fig-title{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.01em;margin:0;color:var(--ink)}
+
+  .steps{list-style:none;margin:0;padding:0;position:relative}
+  .steps::before{
+    content:"";position:absolute;left:21px;top:14px;bottom:42px;width:2px;
+    background:linear-gradient(to bottom,var(--steel) 0%,var(--steel) 22%,var(--amber) 45%,var(--amber) 62%,var(--crimson) 82%,var(--crimson) 100%);
+    border-radius:2px;
+  }
+  .step{
+    position:relative;display:grid;grid-template-columns:44px 1fr;gap:20px;
+    padding:0 0 26px 0;align-items:start;
+  }
+  .node{
+    width:44px;height:44px;border-radius:50%;background:var(--surface);
+    border:2px solid var(--steel);color:var(--steel);
+    font-family:var(--mono);font-weight:700;font-size:15px;
+    display:flex;align-items:center;justify-content:center;z-index:1;
+    box-shadow:0 0 0 5px var(--paper);
+  }
+  .step.s-amber .node{border-color:var(--amber);color:var(--amber)}
+  .step.s-crimson .node{border-color:var(--crimson);color:var(--crimson);background:var(--crimson);color:#fff}
+  @media (prefers-color-scheme:dark){ .step.s-crimson .node{color:#15191c} }
+
+  .card{
+    background:var(--surface);border:1px solid var(--hair);border-radius:14px;
+    padding:18px 20px 19px;
+  }
+  .step.s-crimson .card{border-color:var(--crimson);border-width:1.5px}
+  .tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:7px;margin:0 0 9px;color:var(--steel);
+  }
+  .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--steel)}
+  .s-amber .tag{color:var(--amber)} .s-amber .tag::before{background:var(--amber)}
+  .s-crimson .tag{color:var(--crimson)} .s-crimson .tag::before{background:var(--crimson)}
+  .step h3{
+    font-family:var(--display);font-weight:600;font-size:18px;line-height:1.25;
+    letter-spacing:-.01em;margin:0 0 6px;color:var(--ink);
+  }
+  .step p{font-size:16.5px;line-height:1.5;color:var(--muted);margin:0;font-family:var(--body)}
+  .fig-caption{
+    font-family:var(--mono);font-size:12px;color:var(--faint);line-height:1.6;
+    margin:18px 0 0;padding-left:64px;
+  }
+  @media (max-width:560px){
+    .step{grid-template-columns:38px 1fr;gap:14px}
+    .node{width:38px;height:38px;font-size:13px}
+    .steps::before{left:18px}
+    .fig-caption{padding-left:0}
+  }
+
+  article{padding:8px 0 40px}
+  article h2{
+    font-family:var(--display);font-weight:600;font-size:clamp(24px,3.4vw,30px);
+    letter-spacing:-.015em;line-height:1.15;margin:54px 0 18px;
+  }
+  article h2 .idx{
+    font-family:var(--mono);font-size:14px;font-weight:700;color:var(--amber);
+    display:block;margin-bottom:8px;letter-spacing:.1em;
+  }
+  article p{margin:0 0 22px}
+  article p:first-of-type:first-letter{
+    font-family:var(--display);font-weight:700;font-size:3.6em;line-height:.8;
+    float:left;padding:6px 12px 0 0;color:var(--ink);
+  }
+  article strong{font-weight:500;color:var(--ink)}
+  .pull{
+    border-left:3px solid var(--amber);padding:4px 0 4px 22px;margin:32px 0;
+    font-style:italic;font-size:22px;line-height:1.5;color:var(--ink);max-width:26em;
+  }
+  .kicker-q{
+    background:var(--surface);border:1px solid var(--hair);border-radius:14px;
+    padding:22px 24px;margin:34px 0;font-family:var(--body);
+  }
+  .kicker-q .ql{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--steel);margin:0 0 12px;
+  }
+  .kicker-q ol{margin:0;padding-left:22px}
+  .kicker-q li{margin:0 0 9px;font-size:18px;line-height:1.5}
+  .closer{
+    font-family:var(--display);font-weight:600;font-size:clamp(22px,3.2vw,28px);
+    letter-spacing:-.01em;line-height:1.25;margin:46px 0 0;color:var(--ink);
+  }
+  .closer .em{color:var(--crimson)}
+
+  footer{border-top:1px solid var(--hair);margin-top:60px;padding:30px 0 70px}
+  footer p{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin:0;letter-spacing:.03em}
+
+  a{color:var(--amber);text-underline-offset:3px}
+  :focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-radius:3px}
+
+  @media (prefers-reduced-motion:no-preference){
+    .step{opacity:0;transform:translateY(10px);animation:rise .55s cubic-bezier(.2,.7,.3,1) forwards}
+    .step:nth-child(1){animation-delay:.05s}
+    .step:nth-child(2){animation-delay:.13s}
+    .step:nth-child(3){animation-delay:.21s}
+    .step:nth-child(4){animation-delay:.29s}
+    .step:nth-child(5){animation-delay:.37s}
+    .step:nth-child(6){animation-delay:.45s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+
+  @media print{
+    body{background:#fff;color:#000;font-size:12pt}
+    .step{opacity:1;transform:none;animation:none;break-inside:avoid}
+    .card,.kicker-q{box-shadow:none}
+    header.masthead{padding:24px 0 16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">ERP delivery &middot; field notes</p>
+    <h1>Why ERP projects fail before go-live</h1>
+    <p class="standfirst">The real risks in an ERP implementation show up long before the system does — in scope, sponsorship, and change readiness.</p>
+    <p class="byline"><span>Implementation &amp; delivery</span> &middot; <span>8 min read</span> &middot; <span>Opinion</span></p>
+  </div>
+</header>
+
+<figure class="diagram">
+  <div class="fig-head">
+    <p class="fig-kicker">How the failure unfolds</p>
+    <h2 class="fig-title">Six steps from kickoff to a stalled go-live</h2>
+  </div>
+
+  <ol class="steps">
+    <li class="step s-steel">
+      <div class="node" aria-hidden="true">1</div>
+      <div class="card">
+        <p class="tag">Scope</p>
+        <h3>The goal is set too vague</h3>
+        <p>"Modernize operations." No line drawn between what changes and what doesn't.</p>
+      </div>
+    </li>
+    <li class="step s-steel">
+      <div class="node" aria-hidden="true">2</div>
+      <div class="card">
+        <p class="tag">Scope</p>
+        <h3>Every team loads its wishlist</h3>
+        <p>With no clear boundary, there's no principled basis to say no to anything.</p>
+      </div>
+    </li>
+    <li class="step s-amber">
+      <div class="node" aria-hidden="true">3</div>
+      <div class="card">
+        <p class="tag">Sponsorship</p>
+        <h3>The sponsor delegates the hard calls</h3>
+        <p>A name on the org chart facilitates workshops instead of deciding.</p>
+      </div>
+    </li>
+    <li class="step s-amber">
+      <div class="node" aria-hidden="true">4</div>
+      <div class="card">
+        <p class="tag">Sponsorship</p>
+        <h3>Conflicts get baked into the build</h3>
+        <p>Unresolved cross-team disputes fossilize into contradictory configuration.</p>
+      </div>
+    </li>
+    <li class="step s-crimson">
+      <div class="node" aria-hidden="true">5</div>
+      <div class="card">
+        <p class="tag">Change readiness</p>
+        <h3>Change is left to last-minute training</h3>
+        <p>People never adapt, so the old spreadsheets and workarounds quietly survive.</p>
+      </div>
+    </li>
+    <li class="step s-crimson">
+      <div class="node" aria-hidden="true">6</div>
+      <div class="card">
+        <p class="tag">Go-live</p>
+        <h3>The failure finally surfaces</h3>
+        <p>Bad data loads, a broken integration, a month-end that takes three weeks.</p>
+      </div>
+    </li>
+  </ol>
+  <figcaption class="fig-caption">Steps 1–4 are decided in the first weeks. The cost stays invisible until step 6 — which is why go-live gets the blame for a failure set in motion at kickoff.</figcaption>
+</figure>
+
+<article>
+  <div class="wrap">
+    <p>When an ERP project is declared a failure, the post-mortem usually fixates on go-live: the data that didn't load, the integration that broke, the month-end that took three weeks to close. But those are symptoms. By the time a project stumbles at go-live, the conditions for failure were already locked in — often months earlier, in decisions no one flagged as risky at the time.</p>
+
+    <p>The uncomfortable truth is that ERP failure is rarely technical. The software works; thousands of organizations run the same product successfully. What fails is the surrounding system of decisions: what the project was actually for, who was accountable for the outcome, and whether the organization was ever ready to work differently. Three early conditions decide most outcomes, and all three are set well before the first configuration screen is touched.</p>
+
+    <h2><span class="idx">01 — Scope</span>The failure that compounds quietly</h2>
+
+    <p>Scope problems don't announce themselves. They arrive as small, reasonable-sounding requests — "can we also handle the inter-company billing this way," "while we're at it, let's fix the approval matrix" — each one defensible in isolation, each one expanding the surface area of the project. The danger isn't a single bad decision; it's the accumulation of dozens of unmanaged ones.</p>
+
+    <p>Two patterns do the most damage. The first is <strong>scope ambiguity at the start</strong> — launching with a goal stated so broadly that no one can tell whether a given feature is in or out. Ambiguous scope is an open invitation for every department to load its wish list onto the project, and there is no principled basis to say no. The second is <strong>scope creep during build</strong>, where the project quietly absorbs process redesign, custom development, and edge cases that were never costed or scheduled. Both lead to the same place: a timeline that slips, a budget that bleeds, and a team that runs out of energy before the hard parts are done.</p>
+
+    <p class="pull">"We'll figure out the process during the build" is the single most expensive sentence in the project.</p>
+
+    <p>The deeper issue is that scope is a proxy for a question most organizations avoid answering directly: what are we actually trying to change? An implementation that tries to standardize processes is a fundamentally different project from one that tries to replicate existing processes in new software. Mixing the two — standardizing here, customizing there, with no clear rule — produces a system that satisfies no one and costs more than either approach would alone.</p>
+
+    <p>A practical test: if you cannot describe, in one page, what the system will and will not do — and what business outcome each major capability is meant to produce — the scope isn't defined yet, regardless of how detailed the requirements document looks.</p>
+
+    <h2><span class="idx">02 — Sponsorship</span>The gap between a name and an owner</h2>
+
+    <p>Almost every ERP project has an executive sponsor on the org chart. Far fewer have one who actually does the job. The distinction matters enormously, because the sponsor is the only role with the authority to make the decisions that determine whether the project survives contact with reality.</p>
+
+    <p>Real sponsorship shows up in three places. It shows up when two departments want incompatible things and someone has to <strong>decide</strong> — not facilitate a workshop, decide. It shows up when the project needs the organization's best people pulled off their day jobs for months. And it shows up when the honest status is bad, and the sponsor carries that message upward rather than letting the project team absorb the blame.</p>
+
+    <p>Weak sponsorship is easy to miss because it looks like delegation. The executive "empowers the team," attends the steering committee, and asks for a recommendation rather than imposing a decision. In practice it leaves the hardest cross-functional conflicts unresolved, pushed down to a project manager who has responsibility without authority. Those conflicts don't disappear; they fossilize into compromises baked into the configuration, and they surface — predictably — at go-live.</p>
+
+    <p>There's a reliable early warning sign. Watch what happens the first time the project needs a genuinely painful decision: a key resource reassigned, a long-standing process abandoned, a date held firm. If that decision gets made cleanly and owned publicly, the sponsorship is real. If it gets studied, softened, or deferred, the project is already operating without the cover it needs.</p>
+
+    <h2><span class="idx">03 — Change readiness</span>The system the organization has to become</h2>
+
+    <p>The third condition is the one most often confused with training. Organizations budget for "change management," schedule end-user training in the final weeks, and consider the human side handled. But change readiness isn't a phase near the end — it's a property of the organization that either exists going in or has to be built deliberately over the life of the project.</p>
+
+    <p>An ERP system encodes a particular way of operating: data entered at the source, decisions following a defined workflow, exceptions handled through the system rather than around it. For many teams this is a profound change in daily behavior, not a new screen layout. If the organization has run for years on spreadsheets, side deals, and the institutional memory of a few long-tenured employees, no amount of training will make it ready by Friday.</p>
+
+    <p>The failure mode here is subtle because it's invisible until go-live and then catastrophic. The technical implementation can be flawless — and it still fails, because the people who have to use it never bought into the new way of working. Shadow systems, workarounds, and "we'll use it once it's stable" are not technical problems; they're the visible residue of change that was never managed.</p>
+
+    <h2>What this means in practice</h2>
+
+    <p>The pattern across all three is the same: the decisive risks are organizational and they're front-loaded. By the time a project reaches the visible, technical phases everyone associates with ERP — configuration, integration, data migration, testing — the outcome is largely already determined.</p>
+
+    <div class="kicker-q">
+      <p class="ql">The kickoff gut-check</p>
+      <ol>
+        <li>Can we state in one page what this will and won't change?</li>
+        <li>Is there a sponsor who will make the painful decisions and own them publicly?</li>
+        <li>Do we honestly understand the gap between how we work today and how this will require us to work — and do we have a credible plan to close it?</li>
+      </ol>
+    </div>
+
+    <p>If the answer to any of these is unclear, the project has a problem — now — regardless of how the demo looked or how confident the implementation partner sounds. These are the cheapest risks to fix early and the most expensive to fix late. A scope decision costs nothing in a workshop and a fortune in rework. A sponsor's authority is free to establish at kickoff and impossible to manufacture at go-live. Change readiness built over twelve months is durable; change readiness attempted in the final two weeks is theater.</p>
+
+    <p class="closer">ERP projects don't fail at go-live. <span class="em">They fail it.</span></p>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+  </div>
+</footer>
+
+</body>
+</html>
