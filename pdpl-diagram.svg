@@ -1,18 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
-  <rect width="400" height="400" fill="#f5f6f5" rx="0"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <defs>
+    <linearGradient id="mainGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a7a6e"/>
+      <stop offset="50%" stop-color="#3c9"/>
+      <stop offset="100%" stop-color="#273470"/>
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#99d633"/>
+      <stop offset="40%" stop-color="#3c9"/>
+      <stop offset="100%" stop-color="#273470"/>
+    </linearGradient>
+  </defs>
 
-  <!-- Shield shape -->
-  <path d="M200 30 L330 90 L330 210 Q330 310 200 370 Q70 310 70 210 L70 90 Z" fill="#1a5c52" opacity=".12"/>
-  <path d="M200 50 L310 100 L310 210 Q310 300 200 355 Q90 300 90 210 L90 100 Z" fill="none" stroke="#2a7a6e" stroke-width="3" opacity=".6"/>
+  <rect width="500" height="200" fill="#f5f6f5" rx="0"/>
 
-  <!-- Check mark inside shield -->
-  <path d="M155 200 L190 235 L250 175" fill="none" stroke="#2a7a6e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+  <!-- Geometric icon (simplified SDAIA-style hexagonal/crystal) -->
+  <g transform="translate(30, 40)">
+    <!-- Outer hexagon -->
+    <polygon points="40,0 80,23 80,69 40,92 0,69 0,23" fill="none" stroke="url(#iconGrad)" stroke-width="2.5" opacity=".6"/>
+    <!-- Inner diamond -->
+    <polygon points="40,15 68,46 40,77 12,46" fill="url(#iconGrad)" opacity=".15"/>
+    <polygon points="40,15 68,46 40,77 12,46" fill="none" stroke="url(#iconGrad)" stroke-width="1.5" opacity=".5"/>
+    <!-- Center lines -->
+    <line x1="40" y1="15" x2="40" y2="77" stroke="url(#iconGrad)" stroke-width="1" opacity=".3"/>
+    <line x1="12" y1="46" x2="68" y2="46" stroke="url(#iconGrad)" stroke-width="1" opacity=".3"/>
+    <!-- Small decorative dots -->
+    <circle cx="40" cy="8" r="2.5" fill="#3c9" opacity=".5"/>
+    <circle cx="40" cy="84" r="2.5" fill="#273470" opacity=".5"/>
+    <circle cx="76" cy="46" r="2" fill="#3c9" opacity=".4"/>
+    <circle cx="4" cy="46" r="2" fill="#273470" opacity=".4"/>
+  </g>
 
-  <!-- PDPL text -->
-  <text x="200" y="280" text-anchor="middle" font-size="52" font-weight="700" fill="#1a1e24" letter-spacing="6">PDPL</text>
-  <text x="200" y="305" text-anchor="middle" font-size="11" fill="#5b646a" letter-spacing="2.5">DATA PROTECTION</text>
-  <text x="200" y="322" text-anchor="middle" font-size="10" fill="#8a929b" letter-spacing="1.8">COMPLIANCE PROGRAM</text>
+  <!-- PDPL text (bold, large) -->
+  <text x="150" y="80" font-size="48" font-weight="800" fill="#1a1e24" letter-spacing="4">PDPL</text>
+  <text x="150" y="108" font-size="13" fill="#5b646a" letter-spacing="2">PERSONAL DATA PROTECTION LAW</text>
 
-  <!-- Small decorative line -->
-  <line x1="120" y1="328" x2="280" y2="328" stroke="#d0d5d2" stroke-width="1"/>
+  <!-- Decorative line -->
+  <line x1="150" y1="120" x2="400" y2="120" stroke="url(#mainGrad)" stroke-width="2" opacity=".3"/>
+
+  <!-- Subtext row -->
+  <text x="150" y="145" font-size="11" fill="#8a929b" letter-spacing="1.5">Kingdom of Saudi Arabia</text>
+  <text x="150" y="165" font-size="11" fill="#8a929b" letter-spacing="1.5">Saudi Data &amp; AI Authority — SDAIA</text>
 </svg>
