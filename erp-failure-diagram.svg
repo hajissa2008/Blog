@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 780" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 800" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
   <defs>
     <radialGradient id="bgGrad" cx="50%" cy="45%" r="60%">
       <stop offset="0%" stop-color="#fcfcfc"/>
@@ -24,7 +24,7 @@
     </filter>
   </defs>
 
-  <rect width="860" height="780" fill="url(#bgGrad)" rx="0"/>
+  <rect width="860" height="800" fill="url(#bgGrad)" rx="0"/>
   <rect x="0" y="0" width="860" height="4" fill="#a8362d" opacity=".7"/>
 
   <!-- Header -->
@@ -33,7 +33,7 @@
   <text x="430" y="102" text-anchor="middle" font-size="14" fill="#6b757c">Three root causes that compound silently — until the system goes live</text>
   <line x1="370" y1="118" x2="490" y2="118" stroke="#d0d5d2" stroke-width="1"/>
 
-  <!-- ==================== SCOPE ==================== -->
+  <!-- SCOPE -->
   <g filter="url(#shadow)">
     <rect x="60" y="150" width="350" height="215" rx="10" fill="#fff" stroke="#e6e9e7" stroke-width="1"/>
     <rect x="60" y="150" width="350" height="36" rx="10" fill="url(#scopeGrad)"/>
@@ -51,7 +51,7 @@
     <text x="92" y="344" font-size="12" fill="#5b646a">no principled basis to say no.</text>
   </g>
 
-  <!-- ==================== SPONSORSHIP ==================== -->
+  <!-- SPONSORSHIP -->
   <g filter="url(#shadow)">
     <rect x="450" y="150" width="350" height="215" rx="10" fill="#fff" stroke="#e6e9e7" stroke-width="1"/>
     <rect x="450" y="150" width="350" height="36" rx="10" fill="url(#sponsorGrad)"/>
@@ -69,14 +69,14 @@
     <text x="482" y="344" font-size="12" fill="#5b646a">coded into contradictory configuration.</text>
   </g>
 
-  <!-- ==================== CONNECTIONS ==================== -->
+  <!-- Connections -->
   <line x1="235" y1="365" x2="235" y2="395" stroke="#4d6975" stroke-width="1.5" opacity=".35"/>
   <polygon points="235,402 230,392 240,392" fill="#4d6975" opacity=".5"/>
   <line x1="625" y1="365" x2="625" y2="395" stroke="#b6720f" stroke-width="1.5" opacity=".35"/>
   <polygon points="625,402 620,392 630,392" fill="#b6720f" opacity=".5"/>
   <line x1="410" y1="222" x2="450" y2="222" stroke="#d0d5d2" stroke-width="1" stroke-dasharray="4,4"/>
 
-  <!-- ==================== CENTRAL HUB ==================== -->
+  <!-- Central Hub -->
   <g filter="url(#shadowDeep)">
     <circle cx="430" cy="450" r="50" fill="#a8362d"/>
     <circle cx="430" cy="450" r="50" fill="none" stroke="#fff" stroke-width="1.5" opacity=".12"/>
@@ -86,30 +86,29 @@
     <text x="430" y="477" text-anchor="middle" font-size="9.5" fill="rgba(255,255,255,.55)" letter-spacing="1">INEVITABLE</text>
   </g>
 
-  <!-- Center → Change Readiness -->
   <line x1="430" y1="500" x2="430" y2="520" stroke="#a8362d" stroke-width="1.5" opacity=".35"/>
   <polygon points="430,527 425,517 435,517" fill="#a8362d" opacity=".5"/>
 
-  <!-- ==================== CHANGE READINESS ==================== -->
+  <!-- CHANGE READINESS -->
   <g filter="url(#shadow)">
-    <rect x="140" y="535" width="580" height="160" rx="10" fill="#fff" stroke="#e6e9e7" stroke-width="1"/>
+    <rect x="140" y="535" width="580" height="208" rx="10" fill="#fff" stroke="#e6e9e7" stroke-width="1"/>
     <rect x="140" y="535" width="580" height="36" rx="10" fill="url(#changeGrad)"/>
     <rect x="140" y="571" width="580" height="1" fill="rgba(0,0,0,.08)"/>
     <circle cx="164" cy="553" r="4" fill="#fff" opacity=".35"/>
     <text x="176" y="557" font-size="11" font-weight="700" fill="#fff" letter-spacing="1.8">CHANGE READINESS</text>
     <text x="160" y="596" font-size="10.5" font-weight="600" fill="#a8362d" letter-spacing=".8">LAST-MINUTE ADAPTATION</text>
-    <circle cx="160" cy="618" r="3" fill="#a8362d" opacity=".7"/>
-    <text x="172" y="622" font-size="13.5" font-weight="600" fill="#1a1e24">Training is an afterthought</text>
-    <text x="172" y="642" font-size="12" fill="#5b646a">Users never truly adapt. Old spreadsheets and shadow processes</text>
-    <text x="172" y="660" font-size="12" fill="#5b646a">quietly survive the cutover.</text>
-    <circle cx="346" cy="618" r="3" fill="#a8362d" opacity=".7"/>
-    <text x="358" y="622" font-size="13.5" font-weight="600" fill="#1a1e24">Failure surfaces at go-live</text>
-    <text x="358" y="642" font-size="12" fill="#5b646a">Bad data loads, broken integrations, and</text>
-    <text x="358" y="660" font-size="12" fill="#5b646a">a month-end close that takes weeks.</text>
+    <circle cx="160" cy="620" r="3" fill="#a8362d" opacity=".7"/>
+    <text x="172" y="624" font-size="13.5" font-weight="600" fill="#1a1e24">Training is an afterthought</text>
+    <text x="172" y="644" font-size="12" fill="#5b646a">Users never truly adapt. Old spreadsheets and shadow processes</text>
+    <text x="172" y="662" font-size="12" fill="#5b646a">quietly survive the cutover.</text>
+    <circle cx="160" cy="692" r="3" fill="#a8362d" opacity=".7"/>
+    <text x="172" y="696" font-size="13.5" font-weight="600" fill="#1a1e24">Failure surfaces at go-live</text>
+    <text x="172" y="716" font-size="12" fill="#5b646a">Bad data loads, broken integrations, and</text>
+    <text x="172" y="734" font-size="12" fill="#5b646a">a month-end close that takes weeks.</text>
   </g>
 
-  <!-- ==================== BOTTOM INSIGHT ==================== -->
-  <rect x="170" y="715" width="520" height="44" rx="6" fill="#1a1e24" opacity=".04"/>
-  <text x="430" y="733" text-anchor="middle" font-size="12.5" fill="#5b646a">All three causes are set in the project's first weeks — long before go-live gets the blame.</text>
-  <text x="430" y="751" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1e24">The cost stays invisible until it's too late.</text>
+  <!-- Bottom insight -->
+  <rect x="170" y="752" width="520" height="44" rx="6" fill="#1a1e24" opacity=".04"/>
+  <text x="430" y="770" text-anchor="middle" font-size="12.5" fill="#5b646a">All three causes are set in the project's first weeks — long before go-live gets the blame.</text>
+  <text x="430" y="788" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1e24">The cost stays invisible until it's too late.</text>
 </svg>
